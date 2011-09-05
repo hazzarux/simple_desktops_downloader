@@ -16,6 +16,7 @@
 import re
 import urllib2, urllib
 import time
+import os
 ####################################### IMPORTS
 
 ####################################### VARIABLES
@@ -73,7 +74,7 @@ start=time.time()
 
 last_page=get_last_page()
 
-for i in range(2, last_page):
+for i in range(2, last_page+1):
 	browse_link="http://simpledesktops.com/browse/"+str(i)+"/"
 	print "adding "+browse_link+" to browselist"
 	browselist.append(browse_link)
@@ -118,7 +119,7 @@ print "got all filelinks","(",filelinks_duration,"sec)"
 for link in dict_files:
         extension=define_image_extension(link)
         keyword=dict_files[link]
-        output_path="C:\Users\\xoxo\Desktop\img\\"+keyword+extension
+        output_path="/home/xoxo/img/"+keyword+extension
         print output_path
         print "downloading "+keyword+extension
         urllib.urlretrieve(link, output_path)
