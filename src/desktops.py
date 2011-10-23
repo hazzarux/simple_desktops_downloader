@@ -119,7 +119,7 @@ print "got all filelinks","(",filelinks_duration,"sec)"
 for link in dict_files:
         extension=define_image_extension(link)
         keyword=dict_files[link]
-        output_path="/home/xoxo/img/"+keyword+extension
+        output_path="/home/somebody/sd/"+keyword+extension
         print output_path
         print "downloading "+keyword+extension
         urllib.urlretrieve(link, output_path)
